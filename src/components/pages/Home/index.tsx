@@ -7,10 +7,10 @@ export default function Home(){
   const navigate = useNavigate()
 
   return(
-    <div className="home_page"
-    onClick={()=>navigate("/userform")}
-    >
-      <div className='option'>
+    <div className="home_page">
+      <div className='option'
+      onClick={()=>navigate("/userform")}
+      >
         <FaUserPlus/>
         <span>Adicionar Usuário</span>
       </div>

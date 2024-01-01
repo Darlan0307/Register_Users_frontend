@@ -1,0 +1,26 @@
+.gerenciamento_page{
+  position: relative;
+  background-color: #333;
+  min-height: 50vh;
+  width: 90vw;
+  padding: 20px 10px;
+  border-radius: 15px;
+
+  h2{
+    color: #eaeaea;
+    text-align: center;
+    padding-top: 1em;
+  }
+
+  .back-btn{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    svg{
+      fill: #eaeaea;
+      font-size: 40px;
+    }
+  }
+
+}
