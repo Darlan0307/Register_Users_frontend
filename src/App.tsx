@@ -1,10 +1,12 @@
+import ContainerPages from "./components/ContainerPages"
+import './App.scss'
 function App() {
-  
 
   return (
-    <>
-      <h1>teste</h1>
-    </>
+    <div className="app">
+      <h1>Sistema de cadastro</h1>
+      <ContainerPages/>
+    </div>
   )
 }
 
