@@ -1,4 +1,5 @@
 export type UserType = {
+  id?:String,
   name?:String,
   lastname?:String,
   fone?:String,

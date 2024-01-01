@@ -1,0 +1,92 @@
+.responsive-table{
+  margin-top: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5em;
+  align-items: center;
+  justify-content: center;
+
+
+  .card_user{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: 2px solid #eaeaea;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.377);
+    h3{
+      text-align: center;
+      color: #eaeaea;
+      font-size: 1.2em;
+      span{
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+    }
+
+    .info_user{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+
+      p{
+        color: #eaeaea;        
+        font-size: 1.1em;
+        span{
+          font-weight: bold;
+          font-size: 1.2em;
+        }
+      }
+
+
+      .config{
+        display: flex;
+        gap: 1em;
+        align-items: center;
+
+        button{
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 18px;
+          padding: 5px;
+        }
+
+        .plus-info{
+          display: flex;
+          align-items: center;
+          color: #0078d4;
+        }
+        .edit-user svg{
+          fill: lightgreen;
+          font-size: 35px;
+        }
+        .remove-user svg{
+          fill:  lightcoral;
+          font-size: 35px;
+        }
+      }
+      
+
+    }
+  }
+
+
+}
+
+.dataEmpty{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: .2em;
+  span{
+    color: #eaeaea;
+  }
+
+  svg{
+    fill: #eaeaea;
+    font-size: 40px;
+  }
+}
