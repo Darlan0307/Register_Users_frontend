@@ -23,8 +23,8 @@ export default function Table({data}:dataType){
             </tr>
           </thead>
           <tbody>
-              {data.map((user:UserType)=>(
-                <tr key={Number(user.id)}>
+              {data.map((user:UserType,index)=>(
+                <tr key={index}>
                   <td data-th="Nome">{`${user.name} ${user.lastname}`}</td>
                   <td data-th="Telefone">{user.fone}</td>
                   <td data-th="Email">{user.email}</td>
@@ -33,7 +33,6 @@ export default function Table({data}:dataType){
                     <button type="button" className='edit-user'><FaUserEdit/></button>
                     <button type="button" className='remove-user'><IoPersonRemoveSharp /></button>
                   </td>
-
                 </tr>
               ))}
           </tbody>

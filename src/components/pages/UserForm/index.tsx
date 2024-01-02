@@ -4,6 +4,7 @@ import './styles.scss'
 import { UserType } from "../../../@types/UserType"
 import { Validate } from "../../../utils/Validate"
 import { FormEvent, useState } from "react"
+import axios from "axios"
 
 export default function UserForm() {
 
@@ -16,6 +17,17 @@ export default function UserForm() {
   const [erros,setErros] = useState<UserType | null>(null)
 
   const navigate = useNavigate()
+
+  const sendDataApi = async(obj:UserType)=>{
+    const url = "https://api-register-users.onrender.com/user"
+    try{
+      const response = await axios.post(url,obj)
+      console.log(response);
+      
+    }catch(err){
+      console.log("ERROR:",err);     
+    }
+  }
 
 
   const handleSubmit = (event:FormEvent) =>{
@@ -44,6 +56,8 @@ export default function UserForm() {
     setFone('')
     setEmail('')
     setPassword('')
+
+    sendDataApi(userData)
   }
 
   return (

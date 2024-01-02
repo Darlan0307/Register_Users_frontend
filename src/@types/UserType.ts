@@ -1,8 +1,11 @@
 export type UserType = {
-  id?:String,
+  _id?:String,
   name?:String,
   lastname?:String,
   fone?:String,
   email?:String,
-  password?:String
+  password?:String,
+  __v?:Number,
+  createdAt?:String,
+  updatedAt?:String,
 }
