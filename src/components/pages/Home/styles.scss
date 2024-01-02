@@ -5,6 +5,19 @@
   justify-content: center;
   gap: 2em;
 
+  .card{
+    max-width: 250px;
+    height: 300px;
+
+    p{
+      margin-top: 1em;
+      color: #eaeaea;
+      font-size: 1.2em;
+      line-height: 1.5em;
+      text-align: center;
+    }
+  }
+
   .option{
     display: flex;
     flex-direction: column;
