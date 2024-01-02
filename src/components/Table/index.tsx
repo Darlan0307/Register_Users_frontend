@@ -1,34 +1,17 @@
 import './styles.scss'
-import { FaUserEdit,FaPlus,FaRegSadCry } from "react-icons/fa";
+import { FaUserEdit,FaRegSadCry } from "react-icons/fa";
 import { IoPersonRemoveSharp,IoOptions } from "react-icons/io5"
 import { UserType } from '../../@types/UserType';
 
-const dados : UserType[] = [
+type dataType ={
+  data: UserType[] | []
+}
 
-  {
-    id: "1",
-    name: "João",
-    lastname: "Silva",
-    fone: "(11) 9999-9999",
-    email: "joao.silva@email.com",
-    password: "123456",
-  },
-  {
-    id:"2",
-    name: "Maria",
-    lastname: "Santos",
-    fone: "(21) 8888-8888",
-    email: "maria.santos@email.com",
-    password: "789456",
-  },
-];
-
-export default function Table(){
-
+export default function Table({data}:dataType){
 
   return(
     <div className="container-table">
-      {dados.length > 0 ? (
+      {data.length > 0 ? (
         <table className='responsive-table'>
           <thead>
             <tr>
@@ -40,7 +23,7 @@ export default function Table(){
             </tr>
           </thead>
           <tbody>
-              {dados.map((user)=>(
+              {data.map((user:UserType)=>(
                 <tr key={Number(user.id)}>
                   <td data-th="Nome">{`${user.name} ${user.lastname}`}</td>
                   <td data-th="Telefone">{user.fone}</td>
