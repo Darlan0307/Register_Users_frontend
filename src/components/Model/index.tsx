@@ -13,11 +13,11 @@ const ModelForm = ({activedUser,setActivedUser}:modelType) => {
       {activedUser && (
         <div className='container-model-form'>
           <div className='model-form'>
-            <button type='button' onClick={()=>setActivedUser(null)}>
+            <button className='close-modal' type='button' onClick={()=>setActivedUser(null)}>
               <IoIosCloseCircle/>
             </button>
-            <h2>Atualize os dados</h2>
-            <form>
+            <h2>Atualizando os dados de Darlan</h2>
+            <form className='form'>
               <div>
                 <input type="text" value="nome" />
               </div>
@@ -31,7 +31,7 @@ const ModelForm = ({activedUser,setActivedUser}:modelType) => {
                 <input type="email" value="email" />
               </div>
               <div>
-                <input type="password" value="password" />
+                <input type="text" value="password" />
               </div>
               <button type='submit'>Atualizar</button>
             </form>
