@@ -20,10 +20,8 @@ const [data,setData] = useState<UserType[] | []>([])
   try{
     const response = await axios.get(url)
     setData(response.data);
-    console.log(response.data);
   }catch(err){
     console.log("Error:",err);
-    
   }
 }
 

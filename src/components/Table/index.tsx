@@ -38,7 +38,7 @@ export default function Table({data}:dataType){
           </tbody>
         </table>
       ):(
-        <h3 className='dataEmpty'><span>Banco de dados sem cadastros</span> <FaRegSadCry/></h3>
+        <h3 className='dataEmpty'><span>Carregando...</span> <FaRegSadCry/></h3>
       )}
     </div>
   )

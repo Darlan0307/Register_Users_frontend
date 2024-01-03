@@ -5,6 +5,7 @@ import { UserType } from "../../../@types/UserType"
 import { Validate } from "../../../utils/Validate"
 import { FormEvent, useState } from "react"
 import axios from "axios"
+import { toast } from "react-toastify";
 
 export default function UserForm() {
 
@@ -22,6 +23,7 @@ export default function UserForm() {
     const url = "https://api-register-users.onrender.com/user"
     try{
       const response = await axios.post(url,obj)
+      toast.success("Cadastrado com sucesso!")
       console.log(response);
       
     }catch(err){
@@ -46,10 +48,11 @@ export default function UserForm() {
 
     if(Object.keys(objErros).length > 0){
       setErros(objErros)
+      toast.warn("Preencha todos os campos corretamente")
       return;
     }
 
-    console.log(userData);
+
 
     setName('')
     setLastname('')
@@ -74,6 +77,7 @@ export default function UserForm() {
             <input type="text" placeholder="Nome" onChange={(e)=>setName(e.target.value)}
             value={name}
             className={erros?.name && "inputError"}
+            min={3}
             />
             {erros?.name && (
               <small>{erros.name}</small>
@@ -92,6 +96,7 @@ export default function UserForm() {
         <div>
           <input type="tel" placeholder="telefone" onChange={(e)=>setFone(e.target.value)} value={fone}
           className={erros?.fone && "inputError"}
+          min={8}
           />
           {erros?.fone && (
               <small>{erros.fone}</small>
@@ -108,6 +113,7 @@ export default function UserForm() {
         <div>
           <input type="password" placeholder="Senha" onChange={(e)=>setPassword(e.target.value)} value={password}
           className={erros?.email && "inputError"}
+          min={6}
           />
           {erros?.password && (
               <small>{erros.password}</small>
