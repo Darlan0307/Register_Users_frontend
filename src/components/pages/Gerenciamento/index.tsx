@@ -5,14 +5,13 @@ import Table from '../../Table'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { UserType } from '../../../@types/UserType'
+import ModelForm from '../../Model'
 
 export default function Gerenciamento() {
 
 const navigate = useNavigate()
 const [data,setData] = useState<UserType[] | []>([])
-
-
- /* https://api-register-users.onrender.com */
+const [activedUser,setActivedUser] = useState<UserType | null>(null)
 
  async function fetchData(){
   const url = "https://api-register-users.onrender.com/users"
@@ -35,7 +34,8 @@ useEffect(()=>{
         <FaArrowAltCircleLeft/>
       </div>
       <h2>Gerenciamento dos Usuários</h2>
-      <Table data={data}/>
+      <Table data={data} setActivedUser={setActivedUser}/>
+      <ModelForm activedUser={activedUser} setActivedUser={setActivedUser}/>
     </div>
   )
 }

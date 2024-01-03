@@ -4,10 +4,11 @@ import { IoPersonRemoveSharp,IoOptions } from "react-icons/io5"
 import { UserType } from '../../@types/UserType';
 
 type dataType ={
-  data: UserType[] | []
+  data: UserType[] | [],
+  setActivedUser: (user:UserType|null) => any
 }
 
-export default function Table({data}:dataType){
+export default function Table({data,setActivedUser}:dataType){
 
   return(
     <div className="container-table">
@@ -30,7 +31,9 @@ export default function Table({data}:dataType){
                   <td data-th="Email">{user.email}</td>
                   <td data-th="Senha">{user.password}</td>
                   <td data-th="⚙️" className='config'>
-                    <button type="button" className='edit-user'><FaUserEdit/></button>
+                    <button type="button" className='edit-user'
+                      onClick={()=>setActivedUser(user)}
+                    ><FaUserEdit/></button>
                     <button type="button" className='remove-user'><IoPersonRemoveSharp /></button>
                   </td>
                 </tr>
