@@ -5,13 +5,16 @@ import Table from '../../Table'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { UserType } from '../../../@types/UserType'
-import ModelForm from '../../Model'
+import ModalUpdate from '../../ModalUpdate'
+import ModalRemove from '../../ModalRemove'
 
 export default function Gerenciamento() {
 
 const navigate = useNavigate()
 const [data,setData] = useState<UserType[] | []>([])
-const [activedUser,setActivedUser] = useState<UserType | null>(null)
+const [activedUserUpdate,setActivedUserUpdate] = useState<UserType | null>(null)
+const [activedUserRemove,setActivedUserRemove] = useState<UserType | null>(null)
+
 
 
 
@@ -35,8 +38,9 @@ useEffect(()=>{
       <div className="back-btn" onClick={()=>navigate("/")}>
         <FaArrowAltCircleLeft/>
       </div>
-      <Table data={data} setActivedUser={setActivedUser}/>
-      <ModelForm activedUser={activedUser} setActivedUser={setActivedUser}/>
+      <Table data={data} setActivedUserUpdate={setActivedUserUpdate} setActivedUserRemove={setActivedUserRemove}/>
+      <ModalUpdate activedUserUpdate={activedUserUpdate} setActivedUserUpdate={setActivedUserUpdate}/>
+      <ModalRemove activedUserRemove={activedUserRemove} setActivedUserRemove={setActivedUserRemove}/>
     </div>
   )
 }

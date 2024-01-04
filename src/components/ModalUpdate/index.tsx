@@ -5,23 +5,21 @@ import { FormEvent, useState } from 'react';
 import { Validate } from '../../utils/Validate';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 type modelType = {
-  activedUser:UserType | null,
-  setActivedUser: (user:UserType|null) => any
+  activedUserUpdate:UserType | null,
+  setActivedUserUpdate: (user:UserType|null) => any
 }
 
-const ModelForm = ({activedUser,setActivedUser}:modelType) => {
+const ModalUpdate = ({activedUserUpdate,setActivedUserUpdate}:modelType) => {
   const url = "https://api-register-users.onrender.com/user/"
   const [erros,setErros] = useState<UserType | null>(null)
 
-  const navigate = useNavigate()
 
   const handleValueUser = (key?:string,value?:string) =>{
 
-  setActivedUser({
-    ...activedUser,[key as keyof UserType]: value
+    setActivedUserUpdate({
+    ...activedUserUpdate,[key as keyof UserType]: value
   })
   
 }
@@ -46,12 +44,12 @@ const handleSubmit = (event:FormEvent) =>{
   setErros(null)
 
   const userData:UserType = {
-    _id:activedUser?._id,
-    name:activedUser?.name,
-    lastname:activedUser?.lastname,
-    fone:activedUser?.fone,
-    email:activedUser?.email,
-    password:activedUser?.password
+    _id:activedUserUpdate?._id,
+    name:activedUserUpdate?.name,
+    lastname:activedUserUpdate?.lastname,
+    fone:activedUserUpdate?.fone,
+    email:activedUserUpdate?.email,
+    password:activedUserUpdate?.password
   }
   
   const objErros = Validate(userData)
@@ -63,25 +61,27 @@ const handleSubmit = (event:FormEvent) =>{
   }
 
   updateUserApi(userData)
+  setActivedUserUpdate(null)
 
-  navigate("/")
+  setTimeout(()=>{
+    window.location.reload()
+  },3000)
 
-  setActivedUser(null)
 }
 
 
   return (
     <>
-      {activedUser && (
+      {activedUserUpdate && (
         <div className='container-model-form'>
           <div className='model-form'>
-            <button className='close-modal' type='button' onClick={()=>setActivedUser(null)}>
+            <button className='close-modal' type='button' onClick={()=>setActivedUserUpdate(null)}>
               <IoIosCloseCircle/>
             </button>
-            <h2>Atualizando os dados de {activedUser.name}</h2>
+            <h2>Atualizando os dados de {activedUserUpdate.name}</h2>
             <form className='form' onSubmit={handleSubmit}>
               <div>
-                <input type="text" value={`${activedUser.name}`}
+                <input type="text" value={`${activedUserUpdate.name}`}
                 onChange={(e)=>handleValueUser("name",e.target.value)}
                 />
                 {erros?.name && (
@@ -89,7 +89,7 @@ const handleSubmit = (event:FormEvent) =>{
                 )}
               </div>
               <div>
-                <input type="text" value={`${activedUser.lastname}`} 
+                <input type="text" value={`${activedUserUpdate.lastname}`} 
                 onChange={(e)=>handleValueUser("lastname",e.target.value)}
                 />
                 {erros?.lastname && (
@@ -97,7 +97,7 @@ const handleSubmit = (event:FormEvent) =>{
                 )}
               </div>
               <div>
-                <input type="tel" value={`${activedUser.fone}`} 
+                <input type="tel" value={`${activedUserUpdate.fone}`} 
                 onChange={(e)=>handleValueUser("fone",e.target.value)}
                 />
                 {erros?.fone && (
@@ -105,7 +105,7 @@ const handleSubmit = (event:FormEvent) =>{
                 )}
               </div>
               <div>
-                <input type="email" value={`${activedUser.email}`} 
+                <input type="email" value={`${activedUserUpdate.email}`} 
                 onChange={(e)=>handleValueUser("email",e.target.value)}
                 />
                 {erros?.email && (
@@ -113,7 +113,7 @@ const handleSubmit = (event:FormEvent) =>{
                 )}
               </div>
               <div>
-                <input type="text" value={`${activedUser.password}`} 
+                <input type="text" value={`${activedUserUpdate.password}`} 
                 onChange={(e)=>handleValueUser("password",e.target.value)}
                 />
                 {erros?.password && (
@@ -129,4 +129,4 @@ const handleSubmit = (event:FormEvent) =>{
   )
 }
 
-export default ModelForm
+export default ModalUpdate

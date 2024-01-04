@@ -6,10 +6,11 @@ import { useEffect, useState } from 'react';
 
 type dataType ={
   data: UserType[] | [],
-  setActivedUser: (user:UserType|null) => any
+  setActivedUserUpdate: (user:UserType|null) => any,
+  setActivedUserRemove: (user:UserType|null) => any
 }
 
-export default function Table({data,setActivedUser}:dataType){
+export default function Table({data,setActivedUserUpdate,setActivedUserRemove}:dataType){
 
   const [isLoading,setIsLoading] = useState(true)
 
@@ -43,9 +44,11 @@ export default function Table({data,setActivedUser}:dataType){
                   <td data-th="Senha">{user.password}</td>
                   <td data-th="⚙️" className='config'>
                     <button type="button" className='edit-user'
-                      onClick={()=>setActivedUser(user)}
+                      onClick={()=>setActivedUserUpdate(user)}
                     ><FaUserEdit/></button>
-                    <button type="button" className='remove-user'><IoPersonRemoveSharp /></button>
+                    <button type="button" className='remove-user'
+                    onClick={()=>setActivedUserRemove(user)}
+                    ><IoPersonRemoveSharp /></button>
                   </td>
                 </tr>
               ))}
