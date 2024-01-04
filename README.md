@@ -1,30 +1,90 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Logo do projeto](/src/asset/register-users-2.jpg)
 
-Currently, two official plugins are available:
+# Nome do Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Uma breve descrição do projeto aqui.
 
-## Expanding the ESLint configuration
+## 🔥 Introdução
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Coloque aqui as instruções e quais são os objetivos desse projeto, funcionalidades.
 
-- Configure the top-level `parserOptions` property like this:
+### ⚙️ Pré-requisitos
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Coloque aqui passo a passo que precisa para instalar o projeto e como instalá-lo.
+
+```
+Pode inserir exemplos.
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 🔨 Guia de instalação
+
+Explique aqui um passo a passo mostrando como deve executar para ter um ambiente de desenvolvimento em execução, desde instalar e rodar o projeto.
+
+Etapas para instalar:
+
+```
+Codigo, exemplos
+```
+Passo 2:
+```
+Codigo, exemplos
+```
+
+
+## 🛠️ Executando os testes (caso tenha testes)
+
+Explique como executar os testes automatizados para este sistema.
+
+```
+Coloque exemplos
+```
+
+## 📦 Tecnologias usadas:
+
+Coloque aqui as ferramentas que você usou para criar seu projeto, exemplo:
+
+* ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+* ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+* ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+
+- Link para pegar as badges: https://github.com/Ileriayo/markdown-badges
+
+Ou pode separar por stacks:
+
+**Front-end:**
+* [React JS](https://react.dev/)
+* [TailwindCSS](https://tailwindcss.com/)
+
+**Back-end:**
+* [NodeJS](https://nodejs.org/).
+* [TypeScript](https://www.typescriptlang.org/) 
+* [Mongo DB](https://mongodb.com/)
+
+## 👷 Autores
+
+Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início, colaboradores.
+
+* **Nome do dev** - *Função realizada* - [nome_do_dev](https://github.com/link_do_Perfil)
+* **Sujeito Programador** - *Frontend do projeto* - [@sujeitoprogramador](https://github.com/devfraga)
+
+## 📄 Licença
+
+Esse projeto está sob a licença (nome da licença) - acesse os detalhes [LICENSE.md](https://github.com/link_da_licenca).
+
+## 💭 FAQ - Perguntas frequentes
+
+#### Questão 1
+
+Resposta 1
+
+#### Questão 2
+
+Resposta 2
+
+
+## 💡 Expressões de gratidão
+
+* Um agradecimento publicamente.
+* Para suporte, mande um email para nome@teste.com.
+* Link para o seu linkedin [Meu linkedin](https://url_do_link)
