@@ -65,6 +65,10 @@
             transform: scale(1.05);
           }
         }
+        .input-error{
+          color: lightcoral;
+          font-weight: bold;
+        }
       }
 
       button{

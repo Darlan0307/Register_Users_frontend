@@ -4,7 +4,7 @@ type Error = {
   [key : string]:String
 }
 
-export const Validate = (data : UserType) => {
+export const Validate = (data : UserType ) => {
 
   const erros : Error = {}
 

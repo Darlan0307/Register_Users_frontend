@@ -13,6 +13,8 @@ const navigate = useNavigate()
 const [data,setData] = useState<UserType[] | []>([])
 const [activedUser,setActivedUser] = useState<UserType | null>(null)
 
+
+
  async function fetchData(){
   const url = "https://api-register-users.onrender.com/users"
 

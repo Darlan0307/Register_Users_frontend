@@ -53,7 +53,7 @@ export default function Table({data,setActivedUser}:dataType){
         </table>
       ):(
         <div className='container_loading'>
-          <h3 className='dataEmpty'><span>A primeira vez demora um pouco...</span> <FaRegSadCry/></h3>
+          <h3 className='dataEmpty'><span>Aguarde um momento por favor...</span> <FaRegSadCry/></h3>
           <div className="loader-container">
             <div className="loader"></div>
             <div className="loader-text">Loading...</div>
