@@ -7,7 +7,7 @@ const ContainerPages = () => {
   return (
     <main>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route index element={<Home/>}/>
         <Route path="/userform" element={<UserForm/>}/>
         <Route path="/gerenciamento" element={<Gerenciamento/>}/>
       </Routes>
