@@ -2,6 +2,7 @@ import './styles.scss'
 import { FaUserEdit,FaRegSadCry } from "react-icons/fa";
 import { IoPersonRemoveSharp,IoOptions } from "react-icons/io5"
 import { UserType } from '../../@types/UserType';
+import { useEffect, useState } from 'react';
 
 type dataType ={
   data: UserType[] | [],
@@ -10,9 +11,19 @@ type dataType ={
 
 export default function Table({data,setActivedUser}:dataType){
 
+  const [isLoading,setIsLoading] = useState(true)
+
+  useEffect(()=>{
+    const idTime = setTimeout(()=>{
+      setIsLoading(false)
+    },3000)
+
+    return () => clearTimeout(idTime)
+  },[])
+
   return(
     <div className="container-table">
-      {data.length > 0 ? (
+      {(data.length > 0 && isLoading == false) ? (
         <table className='responsive-table'>
           <thead>
             <tr>
@@ -41,7 +52,15 @@ export default function Table({data,setActivedUser}:dataType){
           </tbody>
         </table>
       ):(
-        <h3 className='dataEmpty'><span>Carregando...</span> <FaRegSadCry/></h3>
+        <div className='container_loading'>
+          <h3 className='dataEmpty'><span>Carregando...</span> <FaRegSadCry/></h3>
+          <div className="loading">
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="circle"></div>
+          </div>
+          
+        </div>
       )}
     </div>
   )
