@@ -7,12 +7,14 @@ import { useEffect, useState } from 'react';
 type dataType ={
   data: UserType[] | [],
   setActivedUserUpdate: (user:UserType|null) => any,
-  setActivedUserRemove: (user:UserType|null) => any
+  setActivedUserRemove: (user:UserType|null) => any,
+  setIsLoading:(value:boolean) => any,
+  isLoading:boolean
 }
 
-export default function Table({data,setActivedUserUpdate,setActivedUserRemove}:dataType){
+export default function Table({data,setActivedUserUpdate,setActivedUserRemove,setIsLoading,isLoading}:dataType){
 
-  const [isLoading,setIsLoading] = useState(true)
+  
 
   useEffect(()=>{
     const idTime = setTimeout(()=>{
@@ -61,6 +63,7 @@ export default function Table({data,setActivedUserUpdate,setActivedUserRemove}:d
             <div className="loader"></div>
             <div className="loader-text">Loading...</div>
           </div>
+          <p>Pode demorar um pouco por conta do serviço da plataforma do banco de dados ser gratuito.</p>
           
         </div>
       )}

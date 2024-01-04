@@ -14,6 +14,7 @@ const navigate = useNavigate()
 const [data,setData] = useState<UserType[] | []>([])
 const [activedUserUpdate,setActivedUserUpdate] = useState<UserType | null>(null)
 const [activedUserRemove,setActivedUserRemove] = useState<UserType | null>(null)
+const [isLoading,setIsLoading] = useState(true)
 
 
 
@@ -38,7 +39,7 @@ useEffect(()=>{
       <div className="back-btn" onClick={()=>navigate("/")}>
         <FaArrowAltCircleLeft/>
       </div>
-      <Table data={data} setActivedUserUpdate={setActivedUserUpdate} setActivedUserRemove={setActivedUserRemove}/>
+      <Table data={data} setActivedUserUpdate={setActivedUserUpdate} setActivedUserRemove={setActivedUserRemove} setIsLoading={setIsLoading} isLoading={isLoading}/>
       <ModalUpdate activedUserUpdate={activedUserUpdate} setActivedUserUpdate={setActivedUserUpdate}/>
       <ModalRemove activedUserRemove={activedUserRemove} setActivedUserRemove={setActivedUserRemove}/>
     </div>

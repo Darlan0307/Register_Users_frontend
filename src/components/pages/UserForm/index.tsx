@@ -22,9 +22,9 @@ export default function UserForm() {
   const sendDataApi = async(obj:UserType)=>{
     const url = "https://api-register-users.onrender.com/user"
     try{
-      const response = await axios.post(url,obj)
+      await axios.post(url,obj)
       toast.success("Cadastrado com sucesso!")
-      console.log(response);
+      navigate("/")
       
     }catch(err){
       console.log("ERROR:",err);     
@@ -61,6 +61,7 @@ export default function UserForm() {
     setPassword('')
 
     sendDataApi(userData)
+
   }
 
   return (

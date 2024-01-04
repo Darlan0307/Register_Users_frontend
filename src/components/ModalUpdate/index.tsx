@@ -8,13 +8,12 @@ import axios from 'axios';
 
 type modelType = {
   activedUserUpdate:UserType | null,
-  setActivedUserUpdate: (user:UserType|null) => any
+  setActivedUserUpdate: (user:UserType|null) => any,
 }
 
 const ModalUpdate = ({activedUserUpdate,setActivedUserUpdate}:modelType) => {
   const url = "https://api-register-users.onrender.com/user/"
   const [erros,setErros] = useState<UserType | null>(null)
-
 
   const handleValueUser = (key?:string,value?:string) =>{
 
@@ -31,8 +30,7 @@ async function updateUserApi(user:UserType) {
     await axios.put(`${url}${_id}`,{
       name, lastname, fone, email, password
     })
-    toast.success(`Usuário ${name} atualizado com sucesso!`)
-
+    toast.success(`Usuário ${name} atualizado com sucesso, atualize a página`)
   }catch(err){
     console.log('ERROR:',err)
     toast.warn("Erro ao tentar atualizar usuário")
@@ -62,11 +60,6 @@ const handleSubmit = (event:FormEvent) =>{
 
   updateUserApi(userData)
   setActivedUserUpdate(null)
-
-  setTimeout(()=>{
-    window.location.reload()
-  },3000)
-
 }
 
 
