@@ -30,7 +30,7 @@ async function updateUserApi(user:UserType) {
     await axios.put(`${url}${_id}`,{
       name, lastname, fone, email, password
     })
-    toast.success(`Usuário ${name} atualizado com sucesso, atualize a página`)
+    toast.success(`Usuário ${name} atualizado com sucesso!`)
   }catch(err){
     console.log('ERROR:',err)
     toast.warn("Erro ao tentar atualizar usuário")

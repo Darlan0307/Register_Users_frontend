@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react"
 import { toast } from "react-toastify"
 import './styles.scss'
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 type modalType ={
   activedUserRemove: UserType | null,
@@ -14,7 +15,7 @@ type modalType ={
 
 const ModalRemove = ({activedUserRemove,setActivedUserRemove}:modalType) => {
   const [name,setName] = useState("")
-
+  const navigate = useNavigate()
 
   const removeUserApi = async() => {
     const url = "https://api-register-users.onrender.com/user/"
@@ -23,9 +24,10 @@ const ModalRemove = ({activedUserRemove,setActivedUserRemove}:modalType) => {
       try{
         await axios.delete(`${url}${id}`)
 
-        toast.success("Usuário removido com sucesso, atualize a página")
+        toast.success("Usuário removido com sucesso!")
 
         window.location.reload()
+        navigate("/")
       }catch(err){
         console.log("ERROR:",err);
         toast.warn("Erro ao tentar remover usuário.")
