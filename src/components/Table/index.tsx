@@ -2,7 +2,7 @@ import './styles.scss'
 import { FaUserEdit,FaRegSadCry } from "react-icons/fa";
 import { IoPersonRemoveSharp,IoOptions } from "react-icons/io5"
 import { UserType } from '../../@types/UserType';
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 
 type dataType ={
   data: UserType[] | [],
