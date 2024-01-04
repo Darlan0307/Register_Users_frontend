@@ -25,8 +25,6 @@ const ModalRemove = ({activedUserRemove,setActivedUserRemove}:modalType) => {
         await axios.delete(`${url}${id}`)
 
         toast.success("Usuário removido com sucesso!")
-
-        window.location.reload()
         navigate("/")
       }catch(err){
         console.log("ERROR:",err);
