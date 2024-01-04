@@ -33,7 +33,6 @@ useEffect(()=>{
       <div className="back-btn" onClick={()=>navigate("/")}>
         <FaArrowAltCircleLeft/>
       </div>
-      <h2>Gerenciamento dos Usuários</h2>
       <Table data={data} setActivedUser={setActivedUser}/>
       <ModelForm activedUser={activedUser} setActivedUser={setActivedUser}/>
     </div>
