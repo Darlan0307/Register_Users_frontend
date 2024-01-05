@@ -5,7 +5,6 @@ import { FormEvent, useState } from 'react';
 import { Validate } from '../../utils/Validate';
 import { toast } from 'react-toastify';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 type modelType = {
   activedUserUpdate:UserType | null,
@@ -15,7 +14,6 @@ type modelType = {
 const ModalUpdate = ({activedUserUpdate,setActivedUserUpdate}:modelType) => {
   const url = "https://api-register-users.onrender.com/user/"
   const [erros,setErros] = useState<UserType | null>(null)
-  const navigate = useNavigate()
 
   const handleValueUser = (key?:string,value?:string) =>{
 
@@ -33,7 +31,9 @@ async function updateUserApi(user:UserType) {
       name, lastname, fone, email, password
     })
     toast.success(`Usuário ${name} atualizado com sucesso!`)
-    navigate("/")
+    setTimeout(()=>{
+      window.location.reload()
+    },2200)
   }catch(err){
     console.log('ERROR:',err)
     toast.warn("Erro ao tentar atualizar usuário")
